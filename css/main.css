@@ -1,0 +1,352 @@
+/*---------------- GENERAL STYLES ----------------*/
+
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Palette+Mosaic&display=swap");
+
+html {
+    color: #292929;
+    background-color: #eeeeee;
+    height: 100%;
+}
+
+body {
+    font-family: "Acme", sans-serif;
+    color: #212852;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+h1 {
+    font-family: "Palette Mosaic", cursive;
+    font-size: 32px;
+    background-image: linear-gradient(
+        to right,
+        #212852,
+        #31479d,
+        #6b77a7,
+        #86abce,
+        #efd176,
+        #dfb8ad,
+        #cb493e,
+        #4c1e42
+    );
+    background-size: 240px;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+h2 {
+    font-size: 14px;
+    margin-left: 0px;
+    margin-bottom: 4px;
+}
+
+p,
+li {
+    font-size: 14px;
+}
+
+ol {
+    padding-left: 20px;
+    margin: 0px;
+}
+
+a {
+    color: #31479d;
+}
+
+/*---------------- CONTAINERS ----------------*/
+
+#content-container {
+    margin: 0px auto;
+}
+
+.container-horizontal {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.container-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    padding: 1em;
+}
+
+.label {
+    width: 100px;
+}
+
+#toolkit {
+    padding: 1.5em;
+    min-width: 500px;
+}
+
+/*---------------- BUTTONS ----------------*/
+
+button {
+    cursor: pointer;
+}
+
+button.shape,
+button.fill,
+button.color {
+    border: none;
+    padding: 0px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+button.shape:hover,
+button.shape.active,
+button.fill:hover,
+button.fill.active,
+button.color:hover,
+button.color.active {
+    background-color: #cfcfcf;
+    border: #cfcfcf solid 6px;
+}
+
+#color-1 {
+    background-color: #212852; /* Dark Blue */
+}
+
+#color-2 {
+    background-color: #31479d; /* Indigo */
+}
+
+#color-3 {
+    background-color: #6b77a7; /* Gray */
+}
+
+#color-4 {
+    background-color: #86abce; /* Light Blue */
+}
+
+#color-5 {
+    background-color: #efd176; /* Yellow */
+}
+
+#color-6 {
+    background-color: #dfb8ad; /* Peach */
+}
+
+#color-7 {
+    background-color: #cb493e; /* Red */
+}
+
+#color-8 {
+    background-color: #4c1e42; /* Dark Red */
+}
+
+#color-9 {
+    background-color: #ffffff; /* Dark Red */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #dfb8ad;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 6px;
+    bottom: 4px;
+    background-color: #ffffff;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #86abce;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #86abce;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 30px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#range-value {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    max-width: 200px;
+    width: 100%;
+    background: transparent;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 0.9rem;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+    background: #86abce;
+    background: linear-gradient(to bottom right, transparent 50%, #86abce 50%);
+}
+
+input[type="range"]::-moz-range-track {
+    height: 0.9rem;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+    background: #86abce;
+    background: linear-gradient(to bottom right, transparent 50%, #86abce 50%);
+}
+
+input[type="range"]::-ms-track {
+    height: 0.9rem;
+    margin: 0;
+    width: 100%;
+    cursor: pointer;
+    color: transparent;
+    background: #86abce;
+    border: 0;
+    background: linear-gradient(to bottom right, transparent 50%, #86abce 50%);
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 18px;
+    background: #ffffff;
+    border: 2px solid #86abce;
+    margin-top: -5px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 18px;
+    background: #ffffff;
+    border: 2px solid #86abce;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+input[type="range"]::-ms-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 18px;
+    background: #ffffff;
+    border: 2px solid #86abce;
+    margin-top: 0;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+}
+
+.action {
+    border: #212852 1.5px solid;
+    color: #212852;
+    font-family: "Acme", sans-serif;
+    height: 30px;
+    padding: 1px 10px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.action:hover,
+.action.active {
+    background-color: #212852;
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+#shake {
+    border: #212852 1.5px solid;
+    font-family: "Acme", sans-serif;
+    font-size: 24px;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#shake:hover,
+#shake.active {
+    background: linear-gradient(
+        to right,
+        #212852,
+        #31479d,
+        #6b77a7,
+        #86abce,
+        #efd176,
+        #dfb8ad,
+        #cb493e,
+        #4c1e42
+    );
+    color: #ffffff;
+    transition: 0.2s;
+}

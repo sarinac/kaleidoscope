@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Kaleidoscope</title>
+        <meta property="og:title" content="Kaleidoscope">
+        <meta property="og:description" content="Drawing with Canvas.">
+        <!-- <meta property="og:image" content=""> -->
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YQC37FT3TK"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-YQC37FT3TK");
+        </script>
+        <script type="module" src="js/main.js"></script>
+    </head>
+    <body>
+        <div class="container-horizontal" id="content-container">
+            
+            <div class="container-vertical" id="toolkit">
+                <div class="content">
+                    <h1>Kaleidoscope</h1>
+                    <p>Crafted by <a href="https://ifcolorful.com/">Sarina Chen</a></p>
+                </div>
+                <div class="content">
+                    <p>A kaleidoscope is an optical instrument that creates symmetric patterns with mirrors and colored bits of glass or paper. This is a kaleidoscope maker. Follow the directions to make your own art.</p>
+                    <ol>
+                        <li>Choose the appearance of object using the configurations below. Click RANDOMIZE if you can't decide.</li>
+                        <li>Click the canvas on the right to place your object.</li>
+                        <li>Click SHAKE to watch your kaleidoscope in action.</li>
+                    </ol>
+                </div>
+                <div class="content container-vertical">
+                    
+                    <div class="container-horizontal">
+                        <h2 class="label">Shape</h2>
+                        <button class="shape active" id="shape-circle" value="circle"><img src="img/shape-circle.svg"></button>
+                        <button class="shape" id="shape-star" value="star"><img src="img/shape-star.svg"></button>
+                        <button class="shape" id="shape-moon" value="moon"><img src="img/shape-moon.svg"></button>
+                    </div>
+
+                    <div class="container-horizontal">
+                        <h2 class="label">Fill</h2>
+                        <button class="fill active" id="fill-solid" value="solid"><img src="img/fill-solid.svg"></button>
+                        <button class="fill" id="fill-stroke" value="stroke"><img src="img/fill-stroke.svg"></button>
+                        <button class="fill" id="fill-stripe" value="stripe"><img src="img/fill-stripe.svg"></button>
+                        <button class="fill" id="fill-spot" value="spot"><img src="img/fill-spot.svg"></button>
+                    </div>
+
+                    <div class="container-horizontal">
+                        <h2 class="label">Color</h2>
+                        <button class="color active" id="color-1" value="#212852"></button>
+                        <button class="color" id="color-2" value="#31479d"></button>
+                        <button class="color" id="color-3" value="#6b77a7"></button>
+                        <button class="color" id="color-4" value="#86abce"></button>
+                        <button class="color" id="color-5" value="#efd176"></button>
+                        <button class="color" id="color-6" value="#dfb8ad"></button>
+                        <button class="color" id="color-7" value="#cb493e"></button>
+                        <button class="color" id="color-8" value="#4c1e42"></button>
+                        <button class="color" id="color-9" value="#ffffff"></button>
+                    </div>
+
+                    <div class="container-horizontal">
+                        <h2 class="label">Size</h2>
+                        <input type="range" min="1" max="80" value="40" id="range-value-input" oninput="document.getElementById('range-value').innerHTML = this.value;">
+                        <span id="range-value">30</span>
+                    </div>
+                    <div class="container-horizontal">
+                        <h2 class="label">Clipped</h2>
+                        <label class="switch">
+                            <input type="checkbox" id="check-clipped" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    
+                </div>
+                <div class="content">
+                    <button class="action" id="randomize">RANDOMIZE</button>
+                    <button class="action" id="clear">CLEAR</button>
+                </div>
+                <div class="content">
+                    <button id="shake">S H A K E</button>
+                </div>
+            </div>
+            <div id="kaleidoscope"></div>
+        </div>
+    </body>
+</html>
